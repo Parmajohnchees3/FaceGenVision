@@ -34,11 +34,9 @@ def process_image():
     # Call recognize_face with the image
     result = face_recognizer.recognize_face(image)
 
-    # if result == True:
-        
+    if result == True:
+        return "PICTURE RECEIVED", 200
 
-    # return "PICTURE RECEIVED", 200
-    # if result == True:
 
 
 
