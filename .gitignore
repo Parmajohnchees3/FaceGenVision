@@ -2,3 +2,5 @@ Backend/data
 Backend/__pycache__
 Backend/ML/.ipynb_checkpoints
 Backend/ML/runs
+Backend/ML/model_weights
+Backend/ML/__pycache__
