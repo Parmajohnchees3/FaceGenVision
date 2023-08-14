@@ -4,3 +4,10 @@ Backend/ML/.ipynb_checkpoints
 Backend/ML/runs
 Backend/ML/model_weights
 Backend/ML/__pycache__
+Backend/ML/finetune.ipynb
+Backend/ML/model_test.ipynb
+Backend/ML/test_ghibli.py 
+*.JPG
+*.jpg
+*.png
+*.env
