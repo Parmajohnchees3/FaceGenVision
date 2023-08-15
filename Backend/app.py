@@ -53,10 +53,10 @@ def generate_image():
     # Decode the image from base64 and convert to PIL Image
     image_data = base64.b64decode(image_data)
     image = Image.open(io.BytesIO(image_data))
-    negative_prompt = "bad anatomy"
+    # negative_prompt = "bad anatomy"
 
     # Call GhibliGenerator with the image and prompt
-    result_image = ghibli_generator.generate_image(image, prompt, negative_prompt)
+    result_image = ghibli_generator.generate_image(image, prompt)
 
     return send_file(result_image, mimetype='image/jpeg')
 

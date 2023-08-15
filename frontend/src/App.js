@@ -11,7 +11,7 @@ const WebcamCapture = () => {
   const [showPrompt, setShowPrompt] = React.useState(false);
   const [prompt, setPrompt] = React.useState('');
   const [generatedImage, setGeneratedImage] = React.useState(null);
-  const [loadingProgress, setLoadingProgress] = React.useState(0); // Loading progress state
+  const [loadingProgress, setLoadingProgress] = React.useState(0); 
 
   const loadingBarStyle = {
     width: `${loadingProgress}%`,
@@ -82,6 +82,15 @@ const WebcamCapture = () => {
     });
   };
 
+  const restartProcess = () => {
+    setImageSrc(null);
+    setShowCamera(true);
+    setShowPrompt(false);
+    setGeneratedImage(null);
+    setLoadingProgress(0);
+  };
+
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <div style={loadingBarStyle}></div> {/* Loading bar */}
@@ -94,29 +103,50 @@ const WebcamCapture = () => {
         </div>
         :
         <div>
-          {imageSrc && <img src={imageSrc} alt="captured" />}
-          {generatedImage && <img src={generatedImage} alt="generated" />} {/* Display the generated image */}
-          {showPrompt ? 
-            <div>
-              <input type="text" value={prompt} onChange={e => setPrompt(e.target.value)} placeholder="Enter your prompt" />
-              <Button type="submit" variant="contained" color="primary" onClick={handlePromptSubmit}>
+          {imageSrc && !generatedImage && <img src={imageSrc} alt="captured" />}
+          <div>
+            {generatedImage && <img src={generatedImage} alt="generated" />} {/* Display the generated image */}
+            {generatedImage && 
+                <div style={{ marginTop: '10px' }}>
+                    <a href={generatedImage} download="generated_image.jpg">
+                        <Button variant="contained" color="primary">
+                            Download Generated Image
+                        </Button>
+                    </a>
+                </div>
+            }
+        </div>
+          <div>
+      {!generatedImage && showPrompt ? 
+        <div>
+            <input type="text" value={prompt} onChange={e => setPrompt(e.target.value)} placeholder="Enter your prompt" />
+            <Button type="submit" variant="contained" color="primary" onClick={handlePromptSubmit}>
                 Generate Image
-              </Button>
-            </div>
-          : 
-            <div>
-              <Button type="submit" variant="contained" color="primary" onClick={handleNewPhoto}>
-                Take another photo!
-              </Button>
-              <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>
-                Submit
-              </Button>
-            </div>
-          }
+            </Button>
+        </div>
+    : 
+        <div>
+            {!generatedImage && 
+            <>
+                <Button type="submit" variant="contained" color="primary" onClick={handleNewPhoto}>
+                    Take another photo!
+                </Button>
+                <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>
+                    Submit
+                </Button>
+            </>}
+        </div>
+    }
+    {generatedImage &&
+    <Button variant="contained" color="secondary" onClick={restartProcess} style={{ marginTop: '10px' }}>
+        Restart Process
+    </Button>}
+    </div>
         </div>
       }
     </div>
   );
+
 };
 
 function App() {
