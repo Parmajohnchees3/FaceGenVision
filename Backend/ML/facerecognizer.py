@@ -22,10 +22,10 @@ class FaceRecognizer:
         ).to(self.device)
 
         # Load trained model weights (insert the path to your trained model)
-        self.resnet.load_state_dict(torch.load('/Users/johnyoo/Documents/Code Projects/VDG/Backend/ML/model_weights/model.pth'))
+        self.resnet.load_state_dict(torch.load('/Users/johnyoo/Documents/Code Projects/FaceGenVision/Backend/ML/model_weights/model.pth'))
         self.resnet.eval()
 
-        self.dataset = datasets.ImageFolder('/Users/johnyoo/Documents/Code Projects/VDG/Backend/data/test_images')
+        self.dataset = datasets.ImageFolder('/Users/johnyoo/Documents/Code Projects/FaceGenVision/Backend/data/test_images')
         self.dataset.idx_to_class = {i:c for c, i in self.dataset.class_to_idx.items()}
 
         self.threshold = 0.95

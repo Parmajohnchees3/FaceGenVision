@@ -87,6 +87,7 @@ const WebcamCapture = () => {
     setShowCamera(true);
     setShowPrompt(false);
     setGeneratedImage(null);
+    setPrompt('');
     setLoadingProgress(0);
   };
 

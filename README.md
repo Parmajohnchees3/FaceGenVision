@@ -1,5 +1,6 @@
 # FaceGenVision
-FaceGenVision is a web application made for my dearest, Victoria. I wanted to make something for our anniversary that was special to her, which was anime. This particular project allows you to create images of yourself in the style of Studio Ghibli. You can prompt it to look like certain things or act out any scenario. Due to us being mostly mid to long distance, I wanted to make something that Victoria could use on a daily basis to make cute images of us doing things together, hence the name of the web application, which is Vix and John's Visions. Happy anniversary Vix.
+FaceGenVision is a web application that allows users to take pictures of themselves and then create an image of yourself in the style of Studio Ghibli.
+<!-- FaceGenVision is a web application made for my dearest, Victoria. I wanted to make something for our anniversary that was special to her, which was anime. This particular project allows you to create images of yourself in the style of Studio Ghibli. You can prompt it to look like certain things or act out any scenario. Due to us being mostly mid to long distance, I wanted to make something that Victoria could use on a daily basis to make cute images of us doing things together, hence the name of the web application, which is Vix and John's Visions. Happy anniversary Vix. -->
 
 
 ## Technologies
