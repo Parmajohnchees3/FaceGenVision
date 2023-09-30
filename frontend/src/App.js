@@ -60,8 +60,8 @@ const WebcamCapture = () => {
     setLoadingProgress(10); // Start loading progress
 
     const progressInterval = setInterval(() => {
-      setLoadingProgress((prevProgress) => Math.min(prevProgress + 10, 90));
-    }, 500);
+      setLoadingProgress((prevProgress) => Math.min(prevProgress + 1, 90));
+    }, 555.55);    
 
     axios({
       method: 'post',

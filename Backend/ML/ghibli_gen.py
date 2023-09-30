@@ -20,5 +20,5 @@ class GhibliGenerator:
         print("Saving to:", output_path)  # Debugging
         image.save(output_path, format='JPEG')
         return output_path
-
+    
 
